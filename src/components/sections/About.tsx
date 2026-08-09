@@ -120,7 +120,7 @@ export default function About() {
                                     duration: 0.6,
                                     delay: index * 0.15,
                                 }}
-                                className="group rounded-[36px] border border-primary/10 bg-background/40 p-10 text-center backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/20"
+                                className="group rounded-[40px] border border-primary/10 bg-background/40 p-10 text-center backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/20"
                             >
 
                                 <div className="flex justify-center">
