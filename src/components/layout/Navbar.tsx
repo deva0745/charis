@@ -14,45 +14,45 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 z-50 w-full border-b border-neutral-200 bg-background/90 backdrop-blur">
+        <header className="fixed top-0 z-50 w-full border-b border-neutral-200 bg-background/90 backdrop-blur-md">
 
-            {/* Main Navbar */}
+            {/* Navbar */}
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:h-24 lg:px-10">
 
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="flex flex-col"
                     onClick={closeMenu}
+                    className="flex flex-col"
                 >
                     <h1 className="font-heading text-3xl tracking-[0.2em] text-primary sm:text-4xl lg:text-5xl lg:tracking-[0.28em]">
                         CHARIS
                     </h1>
 
-                    <span className="mt-1 text-[9px] uppercase tracking-[0.32em] text-muted-foreground sm:text-xs sm:tracking-[0.42em]">
+                    <span className="mt-0.5 text-[8px] uppercase tracking-[0.32em] text-muted-foreground sm:mt-1 sm:text-xs sm:tracking-[0.42em]">
                         Symbolic Gifting
                     </span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden items-center gap-12 md:flex">
+                <nav className="hidden items-center gap-10 md:flex lg:gap-12">
                     <Link
                         href="#about"
-                        className="transition hover:text-primary"
+                        className="transition-colors hover:text-primary"
                     >
                         About
                     </Link>
 
                     <Link
-                        href="#method"
-                        className="transition hover:text-primary"
+                        href="#how-it-works"
+                        className="transition-colors hover:text-primary"
                     >
                         Method
                     </Link>
 
                     <Link
                         href="#consultation"
-                        className="transition hover:text-primary"
+                        className="transition-colors hover:text-primary"
                     >
                         Consultation
                     </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
                 {/* Desktop Sign In */}
                 <div className="hidden md:block">
-                    <Button className="rounded-full px-8">
+                    <Button className="rounded-full px-7 lg:px-8">
                         Sign In
                     </Button>
                 </div>
@@ -68,20 +68,20 @@ export default function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                     type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="flex items-center justify-center rounded-full p-2 md:hidden"
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="flex h-10 w-10 items-center justify-center rounded-full md:hidden"
                     aria-label={isOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isOpen}
                 >
                     {isOpen ? (
-                        <X size={26} strokeWidth={1.5} />
+                        <X size={25} strokeWidth={1.5} />
                     ) : (
-                        <Menu size={26} strokeWidth={1.5} />
+                        <Menu size={25} strokeWidth={1.5} />
                     )}
                 </button>
             </div>
 
-            {/* Animated Mobile Menu */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -101,23 +101,22 @@ export default function Navbar() {
                             duration: 0.45,
                             ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="border-t border-neutral-200 bg-background px-5 py-6 md:hidden"
+                        className="border-t border-neutral-200 bg-background px-5 py-5 shadow-lg md:hidden"
                     >
-
                         <nav className="flex flex-col">
 
                             <Link
                                 href="#about"
                                 onClick={closeMenu}
-                                className="border-b border-neutral-200 py-4 text-lg transition hover:text-primary"
+                                className="border-b border-neutral-200 py-4 text-base transition-colors hover:text-primary"
                             >
                                 About
                             </Link>
 
                             <Link
-                                href="#method"
+                                href="#how-it-works"
                                 onClick={closeMenu}
-                                className="border-b border-neutral-200 py-4 text-lg transition hover:text-primary"
+                                className="border-b border-neutral-200 py-4 text-base transition-colors hover:text-primary"
                             >
                                 Method
                             </Link>
@@ -125,24 +124,22 @@ export default function Navbar() {
                             <Link
                                 href="#consultation"
                                 onClick={closeMenu}
-                                className="border-b border-neutral-200 py-4 text-lg transition hover:text-primary"
+                                className="border-b border-neutral-200 py-4 text-base transition-colors hover:text-primary"
                             >
                                 Consultation
                             </Link>
 
                             <Button
-                                className="mt-6 w-full rounded-full"
+                                className="mt-5 w-full rounded-full"
                                 onClick={closeMenu}
                             >
                                 Sign In
                             </Button>
 
                         </nav>
-
                     </motion.div>
                 )}
             </AnimatePresence>
-
         </header>
     );
 }

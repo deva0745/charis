@@ -42,10 +42,13 @@ export default function About() {
                     {/* IMAGE */}
 
                     <motion.div
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8 }}
+                        className="flex justify-center lg:justify-end"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 1,
+                            ease: "easeOut",
+                        }}
                     >
                         <div className="overflow-hidden rounded-[40px] shadow-2xl transition duration-300 hover:scale-103">
 
@@ -55,7 +58,7 @@ export default function About() {
                                 width={900}
                                 height={900}
                                 priority
-                                className="h-[700px] w-[700px] object-cover"
+                                className="h-[650px] w-[650px] object-cover"
                             />
 
                         </div>
@@ -74,7 +77,7 @@ export default function About() {
                             WHY WE EXIST
                         </p>
 
-                        <h2 className="max-w-xl font-heading text-[4.8rem] leading-[1.06] tracking-tight text-primary">
+                        <h2 className="max-w-xl font-heading text-5xl leading-[1.06] tracking-tight text-primary lg:text-[4rem]">
                             Luxury is not
                             <br />
                             about spending

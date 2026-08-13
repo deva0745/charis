@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
     return (
         <section className="bg-background">
-            <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-16 px-6 pt-32 pb-24 lg:grid-cols-[1fr_1.1fr] lg:px-10">
+            <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pt-20 pb-20 sm:gap-16 sm:px-6 sm:pt-32 sm:pb-24 lg:grid-cols-[1fr_1.1fr] lg:px-10">
 
                 {/* Left */}
                 <motion.div
@@ -19,11 +19,11 @@ export default function Hero() {
                         ease: "easeOut",
                     }}
                 >
-                    <p className="mb-8 uppercase tracking-[0.35em] text-sm text-primary">
+                    <p className="mb-6 text-sm uppercase tracking-[0.3em] text-primary sm:mb-8 sm:tracking-[0.35em]">
                         Luxury AI Gift Concierge
                     </p>
 
-                    <h1 className="font-heading text-6xl leading-[1.15] tracking-tight text-primary lg:text-[6rem]">
+                    <h1 className="font-heading text-5xl leading-[1.1] tracking-tight text-primary sm:text-6xl sm:leading-[1.15] lg:text-[6rem]">
                         The right gift
                         <br />
                         begins with
@@ -31,14 +31,14 @@ export default function Hero() {
                         understanding.
                     </h1>
 
-                    <p className="mt-10 max-w-xl text-xl leading-10 text-muted-foreground">
+                    <p className="mt-7 mb-7 max-w-xl text-base leading-7 text-muted-foreground sm:mt-8 sm:text-lg sm:leading-8 lg:mt-10 lg:text-xl lg:leading-10">
                         CHARIS helps you discover meaningful luxury gifts through an
                         intelligent conversation that understands the recipient,
                         the relationship, and the moment.
                     </p>
 
                     <motion.div
-                        className="mt-12 flex gap-5"
+                        className="mt-9 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:gap-5 lg:mt-12"
                         initial={{ opacity: 0, y: 25 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{
@@ -48,7 +48,7 @@ export default function Hero() {
                     >
                         <Button
                             size="lg"
-                            className="rounded-full px-10 py-7"
+                            className="w-full rounded-full px-8 py-7 sm:w-auto sm:px-10"
                         >
                             Begin Consultation
                         </Button>
@@ -56,7 +56,7 @@ export default function Hero() {
                         <Button
                             size="lg"
                             variant="outline"
-                            className="rounded-full border-primary px-10 py-7"
+                            className="w-full rounded-full border-primary px-8 py-7 sm:w-auto sm:px-10"
                         >
                             Explore Method
                         </Button>
@@ -65,7 +65,7 @@ export default function Hero() {
 
                 {/* Right */}
                 <motion.div
-                    className="flex justify-end"
+                    className="flex justify-center lg:justify-end"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -73,14 +73,14 @@ export default function Hero() {
                         ease: "easeOut",
                     }}
                 >
-                    <div className="overflow-hidden rounded-[40px] transition duration-300 hover:scale-103 shadow-2xl">
+                    <div className="overflow-hidden rounded-[40px] shadow-2xl transition duration-300 hover:scale-103">
                         <Image
                             src={heroImage}
                             alt="Luxury Gift"
                             width={900}
                             height={900}
                             priority
-                            className="h-[700px] w-[700px] object-cover"
+                            className="h-[650px] w-[650px] object-cover"
                         />
                     </div>
                 </motion.div>
