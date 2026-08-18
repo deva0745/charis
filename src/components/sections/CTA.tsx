@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export default function CTA() {
     return (
         <section
-            id="consultation"
+            id="cta"
             className="bg-[#F9F6F3] py-32"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -38,6 +38,11 @@ export default function CTA() {
                         className="mt-10"
                     >
                         <button
+                            onClick={() => {
+                                document
+                                    .getElementById("consultation")
+                                    ?.scrollIntoView({ behavior: "smooth" });
+                            }}
                             className="inline-flex items-center gap-3 rounded-full bg-background px-8 py-4 text-base font-semibold text-primary shadow-lg transition-all duration-300 hover:shadow-xl"
                         >
                             Begin Consultation

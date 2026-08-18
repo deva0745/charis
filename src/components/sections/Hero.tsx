@@ -47,13 +47,24 @@ export default function Hero() {
                         }}
                     >
                         <Button
+                            onClick={() => {
+                                document
+                                    .getElementById("consultation")
+                                    ?.scrollIntoView({ behavior: "smooth" });
+                            }}
                             size="lg"
                             className="w-full rounded-full px-8 py-7 sm:w-auto sm:px-10"
                         >
                             Begin Consultation
                         </Button>
 
+
                         <Button
+                            onClick={() => {
+                                document
+                                    .getElementById("how-it-works")
+                                    ?.scrollIntoView({ behavior: "smooth" });
+                            }}
                             size="lg"
                             variant="outline"
                             className="w-full rounded-full border-primary px-8 py-7 sm:w-auto sm:px-10"
