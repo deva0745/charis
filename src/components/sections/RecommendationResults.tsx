@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Recommendation = {
     productId: string;
@@ -27,6 +28,7 @@ export default function RecommendationResults({
 
     return (
         <section className="mt-24">
+
             {/* Header */}
 
             <motion.div
@@ -53,6 +55,7 @@ export default function RecommendationResults({
 
             <div className="mt-16 grid gap-8 lg:grid-cols-3">
                 {recommendations.map((recommendation, index) => (
+
                     <motion.div
                         key={recommendation.productId}
                         initial={{ opacity: 0, y: 40 }}
@@ -62,61 +65,83 @@ export default function RecommendationResults({
                             duration: 0.7,
                             delay: index * 0.12,
                         }}
-                        className="flex flex-col rounded-[40px] border border-primary/10 bg-background/60 p-8 shadow-xl backdrop-blur-sm"
+                        className="flex flex-col overflow-hidden rounded-[40px] border border-primary/10 bg-background/60 shadow-xl backdrop-blur-sm"
                     >
-                        {/* Card Header */}
 
-                        <p className="text-xs uppercase tracking-[0.3em] text-primary/50">
-                            CURATED GIFT {index + 1}
-                        </p>
+                        {/* Product Image */}
 
-                        <h3 className="mt-4 min-h-[76px] font-heading text-3xl leading-tight text-primary">
-                            {recommendation.name}
-                        </h3>
-
-                        <div className="my-6 h-px bg-primary/10" />
-
-                        {/* Description */}
-
-                        <div className="h-[145px] overflow-y-auto pr-2">
-                            <p className="text-base leading-7 text-muted-foreground">
-                                {recommendation.description}
-                            </p>
+                        <div className="relative h-72 w-full overflow-hidden bg-[#F7F3EF]">
+                            <Image
+                                src={`/products/${recommendation.productId.replace(
+                                    "charis-",
+                                    ""
+                                )}.jpg`}
+                                alt={recommendation.name}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 33vw"
+                                className="object-cover transition-transform duration-700 hover:scale-105"
+                            />
                         </div>
 
-                        {/* Reason */}
+                        {/* Card Content */}
 
-                        <div className="mt-1 h-[145px] overflow-y-auto pr-2">
-                            <p className="text-base leading-7 text-primary/75">
-                                {recommendation.reason}
+                        <div className="flex flex-1 flex-col p-8">
+
+                            {/* Card Header */}
+
+                            <p className="text-xs uppercase tracking-[0.3em] text-primary/50">
+                                CURATED GIFT {index + 1}
                             </p>
-                        </div>
 
-                        <div className="mt-8 h-px bg-primary/10" />
+                            <h3 className="mt-4 min-h-[76px] font-heading text-3xl leading-tight text-primary">
+                                {recommendation.name}
+                            </h3>
 
-                        {/* Price */}
+                            <div className="my-6 h-px bg-primary/10" />
 
-                        <div className="mt-6 flex items-end justify-between gap-4">
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.25em] text-primary/50">
-                                    ESTIMATED PRICE
-                                </p>
+                            {/* Description */}
 
-                                <p className="mt-2 font-heading text-2xl text-primary">
-                                    {recommendation.estimatedPrice}
+                            <div className="h-[145px] overflow-y-auto pr-2">
+                                <p className="text-base leading-7 text-muted-foreground">
+                                    {recommendation.description}
                                 </p>
                             </div>
+
+                            {/* Reason */}
+
+                            <div className="mt-1 h-[145px] overflow-y-auto pr-2">
+                                <p className="text-base leading-7 text-primary/75">
+                                    {recommendation.reason}
+                                </p>
+                            </div>
+
+                            <div className="mt-8 h-px bg-primary/10" />
+
+                            {/* Price */}
+
+                            <div className="mt-6 flex items-end justify-between gap-4">
+                                <div>
+                                    <p className="text-xs uppercase tracking-[0.25em] text-primary/50">
+                                        ESTIMATED PRICE
+                                    </p>
+
+                                    <p className="mt-2 font-heading text-2xl text-primary">
+                                        {recommendation.estimatedPrice}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Explore Gift */}
+
+                            <Link
+                                href={`/products/${recommendation.productId}`}
+                                className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                            >
+                                Explore Gift
+                                <ArrowRight size={17} />
+                            </Link>
+
                         </div>
-
-                        {/* Explore Gift */}
-
-                        <Link
-                            href={`/products/${recommendation.productId}`}
-                            className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                        >
-                            Explore Gift
-                            <ArrowRight size={17} />
-                        </Link>
                     </motion.div>
                 ))}
             </div>

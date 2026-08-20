@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { products } from "@/data/dummy-products";
 
@@ -24,6 +25,8 @@ export default async function ProductPage({
         <main className="min-h-screen bg-[#F9F6F3] px-6 py-32">
             <div className="mx-auto max-w-6xl">
 
+                {/* Header */}
+
                 <p className="text-sm uppercase tracking-[0.35em] text-primary/60">
                     CHARIS COLLECTION
                 </p>
@@ -36,9 +39,25 @@ export default async function ProductPage({
                     {product.brand}
                 </p>
 
+                {/* Product */}
+
                 <div className="mt-12 grid gap-12 lg:grid-cols-2">
 
+                    {/* Product Image */}
+
+                    <div className="relative min-h-[550px] overflow-hidden rounded-[40px] bg-[#F7F3EF] shadow-xl">
+                        <Image
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            priority
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 hover:scale-105"
+                        />
+                    </div>
+
                     {/* Product information */}
+
                     <div className="rounded-[40px] bg-background p-10 shadow-xl">
 
                         <p className="text-base leading-8 text-muted-foreground">
@@ -71,68 +90,69 @@ export default async function ProductPage({
 
                     </div>
 
-                    {/* Product details */}
-                    <div className="rounded-[40px] border border-primary/10 bg-background/40 p-10">
+                </div>
 
-                        <p className="text-sm uppercase tracking-[0.25em] text-primary/60">
-                            DETAILS
+                {/* Product Details */}
+
+                <div className="mt-12 rounded-[40px] border border-primary/10 bg-background/40 p-10">
+
+                    <p className="text-sm uppercase tracking-[0.25em] text-primary/60">
+                        DETAILS
+                    </p>
+
+                    <div className="mt-8">
+
+                        <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
+                            Suitable For
                         </p>
 
-                        <div className="mt-8">
-
-                            <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
-                                Suitable For
-                            </p>
-
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {product.recipientTypes.map((type) => (
-                                    <span
-                                        key={type}
-                                        className="rounded-full border border-primary/10 px-4 py-2 text-sm text-primary"
-                                    >
-                                        {type}
-                                    </span>
-                                ))}
-                            </div>
-
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            {product.recipientTypes.map((type) => (
+                                <span
+                                    key={type}
+                                    className="rounded-full border border-primary/10 px-4 py-2 text-sm text-primary"
+                                >
+                                    {type}
+                                </span>
+                            ))}
                         </div>
 
-                        <div className="mt-10">
+                    </div>
 
-                            <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
-                                Interests
-                            </p>
+                    <div className="mt-10">
 
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {product.interests.map((interest) => (
-                                    <span
-                                        key={interest}
-                                        className="rounded-full border border-primary/10 px-4 py-2 text-sm text-primary"
-                                    >
-                                        {interest}
-                                    </span>
-                                ))}
-                            </div>
+                        <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
+                            Interests
+                        </p>
 
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            {product.interests.map((interest) => (
+                                <span
+                                    key={interest}
+                                    className="rounded-full border border-primary/10 px-4 py-2 text-sm text-primary"
+                                >
+                                    {interest}
+                                </span>
+                            ))}
                         </div>
 
-                        <div className="mt-10">
+                    </div>
 
-                            <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
-                                Occasions
-                            </p>
+                    <div className="mt-10">
 
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {product.occasions.map((occasion) => (
-                                    <span
-                                        key={occasion}
-                                        className="rounded-full border border-primary/10 px-4 py-2 text-sm capitalize text-primary"
-                                    >
-                                        {occasion}
-                                    </span>
-                                ))}
-                            </div>
+                        <p className="text-sm uppercase tracking-[0.2em] text-primary/50">
+                            Occasions
+                        </p>
 
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            {product.occasions.map((occasion) => (
+                                <span
+                                    key={occasion}
+                                    className="rounded-full border border-primary/10 px-4 py-2 text-sm capitalize text-primary"
+                                >
+                                    {occasion}
+                                </span>
+                            ))}
                         </div>
 
                     </div>

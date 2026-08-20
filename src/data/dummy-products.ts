@@ -5,6 +5,7 @@ export type Product = {
     category: string;
     price: number;
     description: string;
+    image: string;
     occasions: string[];
     recipientTypes: string[];
     interests: string[];
@@ -20,6 +21,7 @@ export const products: Product[] = [
         price: 4500,
         description:
             "A refined leather-bound journal designed for thoughtful writing and personal reflection.",
+        image: "/products/001.jpg",
         occasions: ["birthday", "anniversary", "graduation", "thank-you"],
         recipientTypes: ["mother", "father", "partner", "friend", "professional"],
         interests: ["reading", "writing", "journaling", "art"],
@@ -34,6 +36,7 @@ export const products: Product[] = [
         price: 8500,
         description:
             "A handcrafted silk stole with a timeless design suitable for elegant everyday and occasion wear.",
+        image: "/products/002.jpg",
         occasions: ["birthday", "anniversary", "festival", "celebration"],
         recipientTypes: ["mother", "partner", "friend"],
         interests: ["fashion", "art", "luxury", "design"],
@@ -48,6 +51,7 @@ export const products: Product[] = [
         price: 6500,
         description:
             "A curated set of sophisticated fragrances designed to create a calm and luxurious atmosphere.",
+        image: "/products/003.jpg",
         occasions: ["birthday", "anniversary", "housewarming", "thank-you"],
         recipientTypes: ["mother", "partner", "friend"],
         interests: ["wellness", "interiors", "relaxation", "luxury"],
@@ -62,6 +66,7 @@ export const products: Product[] = [
         price: 7000,
         description:
             "A minimalist leather card holder crafted for someone who appreciates understated sophistication.",
+        image: "/products/004.jpg",
         occasions: ["birthday", "anniversary", "graduation", "promotion"],
         recipientTypes: ["father", "partner", "friend", "professional"],
         interests: ["fashion", "business", "design", "luxury"],
@@ -76,6 +81,7 @@ export const products: Product[] = [
         price: 16000,
         description:
             "High-quality headphones designed for immersive listening and detailed musical experiences.",
+        image: "/products/005.jpg",
         occasions: ["birthday", "anniversary", "celebration"],
         recipientTypes: ["mother", "father", "partner", "friend"],
         interests: ["classical music", "music", "audio", "technology"],
@@ -90,6 +96,7 @@ export const products: Product[] = [
         price: 5500,
         description:
             "A carefully assembled collection of premium teas and relaxing wellness essentials.",
+        image: "/products/006.jpg",
         occasions: ["birthday", "thank-you", "housewarming", "celebration"],
         recipientTypes: ["mother", "father", "partner", "friend"],
         interests: ["tea", "wellness", "relaxation", "self-care"],
@@ -104,6 +111,7 @@ export const products: Product[] = [
         price: 6000,
         description:
             "A premium coffee collection designed for someone who enjoys slow and intentional coffee rituals.",
+        image: "/products/007.jpg",
         occasions: ["birthday", "thank-you", "housewarming", "celebration"],
         recipientTypes: ["father", "partner", "friend", "professional"],
         interests: ["coffee", "food", "travel", "lifestyle"],
@@ -118,6 +126,7 @@ export const products: Product[] = [
         price: 19000,
         description:
             "A sophisticated minimalist watch designed around timeless proportions and understated elegance.",
+        image: "/products/008.jpg",
         occasions: ["birthday", "anniversary", "graduation", "promotion"],
         recipientTypes: ["father", "partner", "professional"],
         interests: ["watches", "fashion", "design", "luxury"],
