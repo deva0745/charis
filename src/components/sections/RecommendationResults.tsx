@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-type Recommendation = {
+export type Recommendation = {
     productId: string;
     name: string;
     description: string;
